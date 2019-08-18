@@ -11,4 +11,4 @@ This plugin provides a way to generate custom post type placeholders, making it 
 Clone the contents of this repository to your WordPress plugins folder and activate the plugin via the installed plugins page.
 
 ## License
-[GPL-3.0](LICENSE.md)
+[GPL-3.0](LICENSE)
