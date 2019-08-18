@@ -26,16 +26,19 @@ class Settings
         register_setting($key, $key, [__CLASS__, 'sanitize']);
         add_settings_section('general', 'General', '__return_empty_string', $key);
         
-        // ...
-
         $option = swace_placeholder_get_options();
+        
+        add_settings_field('display_placeholders', 'Display Placeholder', ['Swace\AcfPlaceholder\Field', 'radio'], $key, 'general', [
+            'name' => "{$key}[display_placeholders]",
+            'value' => isset($option['display_placeholders']) ? $option['display_placeholders'] : 'false',
+            'description' => 'Whether or not to display placeholders'
+        ]);
 
         add_settings_field('excluded_post_types', 'Excluded Post Types', ['Swace\AcfPlaceholder\Field', 'checkboxes'], $key, 'general', [
             'name' => "{$key}[excluded_post_types]",
             'value' => isset($option['excluded_post_types']) ? $option['excluded_post_types'] : [],
             'choices' => self::getPostTypes(),
             'description' => 'Select post types that does not require placeholders',
-            'legend' => 'Excluded Post Types'
         ]);
     }
 

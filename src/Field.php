@@ -61,4 +61,27 @@ class Field
             <?= !empty($args['description']) ? "<p class=\"description\">{$args['description']}</p>" : ''; ?>
         </fieldset><?php
     }
+
+    public static function radio($args = [])
+    {
+        ?><div>
+            <label>
+                <input type="radio"
+                    name="<?= esc_attr($args['name']); ?>"
+                    value="true"
+                    <?php checked('true', $args['value'], true); ?> 
+                />
+                <span>Yes</span>
+            </label><br />
+            <label>
+                <input type="radio"
+                    name="<?= esc_attr($args['name']); ?>"
+                    value="false"
+                    <?php checked('false', $args['value'], true); ?> 
+                />
+                <span>No</span>
+            </label>
+            <?= !empty($args['description']) ? "<p class=\"description\">{$args['description']}</p>" : ''; ?>
+        </div><?php
+    }
 }
