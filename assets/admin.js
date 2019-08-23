@@ -4,10 +4,10 @@
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: wpjd.ajaxurl,
+                url: swace_acf_placeholder_nonce.ajaxurl,
                 data: {
                     action: 'wp_swace_placeholder_manual_trigger',
-                    security: wpjd.placeholder_button_nonce,
+                    security: swace_acf_placeholder_nonce.placeholder_button_nonce,
                 },
                 dataType: 'json',
                 success: function(res) {

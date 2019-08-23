@@ -75,7 +75,7 @@ class PlaceholderTrigger
 
         $button_nonce = wp_create_nonce('swace-acf-placeholder-button-nonce');
 
-        wp_localize_script('swace-acf-placeholder-adminbar', 'wpjd', [
+        wp_localize_script('swace-acf-placeholder-adminbar', 'swace_acf_placeholder_nonce', [
             'ajaxurl' => admin_url('admin-ajax.php'),
             'placeholder_button_nonce' => $button_nonce,
         ]);
